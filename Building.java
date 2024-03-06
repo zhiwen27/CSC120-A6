@@ -13,25 +13,42 @@ public class Building {
         this.nFloors = nFloors;
     }
 
+    /**
+     * Getter for the name of the building
+     * @return the name of the building
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Getter for the address of the building
+     * @return the address of the building
+     */
     public String getAddress() {
         return this.address;
     }
 
+    /**
+     * Getter for the floors of the building
+     * @return the floors of the building
+     */
     public int getFloors() {
         return this.nFloors;
     }
 
+    /* Do some printing */
     public String toString() {
         return this.name + " is a " + this.nFloors + "-story building located at " + this.address;
     }
 
     public static void main(String[] args) {
-        Building fordHall = new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4);
-        System.out.println(fordHall);
+        try{
+            Building fordHall = new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4);
+            System.out.println(fordHall);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 }
