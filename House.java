@@ -6,19 +6,11 @@ public class House extends Building{
   private ArrayList<String> residents;
   private boolean hasDiningRoom;
 
-  public House(String name, String address, int nFloors) {
+  public House(String name, String address, int nFloors, boolean hasDiningRoom) {
     super(name, address, nFloors);
     System.out.println("You have built a house 🏠: " + this.name);
     this.residents = new ArrayList<String>();
-    this.hasDiningRoom = false;    /* assume the house doesn't have dining room initially */
-  }
-
-  /**
-   * Setter for hasDiningRoom
-   * @param hasDiningRoom indicate if the house has a dining room
-   */
-  public void setDiningRoom(boolean hasDiningRoom){
-    this.hasDiningRoom = hasDiningRoom;
+    this.hasDiningRoom = hasDiningRoom;    /* assume the house doesn't have dining room initially */
   }
 
   /**
@@ -83,7 +75,7 @@ public class House extends Building{
 
   public static void main(String[] args) {
     try{
-      House Tyler = new House("Tyler", "164 Green Street Northampton, MA 01063",4);
+      House Tyler = new House("Tyler", "164 Green Street Northampton, MA 01063",4,true);
       System.out.println(Tyler);
       try{
         Tyler.moveIn("Nancy");
