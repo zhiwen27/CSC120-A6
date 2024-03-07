@@ -5,12 +5,14 @@ public class House extends Building{
 
   private ArrayList<String> residents;
   private boolean hasDiningRoom;
+  private boolean hasElevator;
 
-  public House(String name, String address, int nFloors, boolean hasDiningRoom) {
-    super(name, address, nFloors);
+  public House(String name, String address, int nFloors, boolean hasElevator, boolean hasDiningRoom) {
+    super(name, address, nFloors);    /* a House is a Building */
     System.out.println("You have built a house 🏠: " + this.name);
     this.residents = new ArrayList<String>();
-    this.hasDiningRoom = hasDiningRoom;    /* assume the house doesn't have dining room initially */
+    this.hasElevator = hasElevator;
+    this.hasDiningRoom = hasDiningRoom;
   }
 
   /**
@@ -68,14 +70,25 @@ public class House extends Building{
     }
   }
 
-  /* Do some printing */
+  /* Do some printing */    // if comment this, will do the Building printing
   public String toString(){
     return this.name + " is a house at " + this.address + " with " + this.nResidents() + " residents.";
+    /* Some other printing
+    String desc = super.toString();
+    desc = "Residence Hall: " + desc;
+    if (this.hasDiningRoom){
+      desc += " It has a dining room.";
+    }
+    if (this.hasElevator){
+      desc += " It has an elevator.";
+    }
+    return desc;
+    */
   }
 
   public static void main(String[] args) {
     try{
-      House Tyler = new House("Tyler", "164 Green Street Northampton, MA 01063",4,true);
+      House Tyler = new House("Tyler", "164 Green Street Northampton, MA 01063", 4, false, true);
       System.out.println(Tyler);
       try{
         Tyler.moveIn("Nancy");
