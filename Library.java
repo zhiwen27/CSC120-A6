@@ -96,8 +96,10 @@ public class Library extends Building{
    */
   public void printCollection(){
     Enumeration<String> keys = this.collection.keys();
+    int num = 1;    // Simply indicate the number of the book
     while(keys.hasMoreElements()){
-      System.out.println(keys.nextElement());
+      System.out.println("Book " + num + ": " + keys.nextElement());
+      num++;
     }
   }
 
@@ -111,24 +113,29 @@ public class Library extends Building{
       Library Neilson = new Library("Neilson Library", "7 Neilson Dr Northampton, MA 01063", 4);
       System.out.println(Neilson);
       try{
-        Neilson.addTitle("Looovely");
+        Neilson.addTitle("The Lorax by Dr. Seuss");
         System.out.println(Neilson);
       } catch(Exception e){
         System.out.println(e.getMessage());
       }
       try{
-        Neilson.addTitle("Modern");
+        Neilson.addTitle("Modern Physics");
       } catch(Exception e){
         System.out.println(e.getMessage());
       }
       Neilson.printCollection();
       try{
-        Neilson.checkOut("Looovely");
+        Neilson.checkOut("The Lorax by Dr. Seuss");
       } catch(Exception e){
         System.out.println(e.getMessage());
       }
       try{
-        Neilson.removeTitle("Looovely");
+        Neilson.removeTitle("The Lorax by Dr. Seuss");
+      } catch(Exception e){
+        System.out.println(e.getMessage());
+      }
+      try{
+        Neilson.removeTitle("Modern Physics");
       } catch(Exception e){
         System.out.println(e.getMessage());
       }
