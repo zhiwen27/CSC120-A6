@@ -7,6 +7,12 @@ public class Library extends Building{
 
   private Hashtable<String, Boolean> collection;
 
+  /**
+   * Full Constructor of the Library class
+   * @param name the name of the library
+   * @param address the address of the library
+   * @param nFloors the number of floors inside the library
+   */
   public Library(String name, String address, int nFloors) {
     super(name, address, nFloors);
     System.out.println("You have built a library 📖: " + this.name);

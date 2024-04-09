@@ -4,6 +4,12 @@ public class Building {
     protected String address = "<Address Unknown>";
     protected int nFloors = 1;
 
+    /**
+     * Full constuctor for the Building class
+     * @param name the name of the building
+     * @param address the address of the building
+     * @param nFloors the number of floors inside the building
+     */
     public Building(String name, String address, int nFloors) {
         if (name != null) { this.name = name; }
         if (address != null) { this.address = address; } 
